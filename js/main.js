@@ -101,9 +101,12 @@ const itemContainer = document.getElementById('item_container');
 const wrap = document.getElementById('wrap');
 // console.log(itemContainer);
 
-wrap.innerHTML = '';
+print(icons, wrap);
 
-icons.forEach((element) => {
+function print(array, container) {
+  container.innerHTML = '';
+
+  array.forEach((element) => {
     const { name, family, prefix, type } = element
     wrap.innerHTML += `
     <div id="item_container">
@@ -114,6 +117,8 @@ icons.forEach((element) => {
     </div>
     `;
 });
+};
+
 
 
 
