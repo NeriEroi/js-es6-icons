@@ -101,9 +101,9 @@ const itemContainer = document.getElementById('item_container');
 const wrap = document.getElementById('wrap');
 // console.log(itemContainer);
 
-print(icons, wrap);
 
-function print(array, container) {
+// stampa icone in html
+const print = (array, container) => {
   container.innerHTML = '';
 
   array.forEach((element) => {
@@ -119,6 +119,8 @@ function print(array, container) {
 });
 };
 
+print(icons, wrap);
+// / stampa icone in html
 
 
 
