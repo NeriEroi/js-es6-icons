@@ -61,3 +61,15 @@ footer {
     height: 70px;
     background-color: white;
 }
+
+footer .select_box {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #29B1DD;
+}
+
+footer .select_box select {
+    margin: 10px;
+}

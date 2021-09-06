@@ -107,9 +107,27 @@ const colors = [
 
 const itemContainer = document.getElementById('item_container');
 const wrap = document.getElementById('wrap');
-// console.log(itemContainer);
-
 const coloredArray = colorIcons(icons, colors);
+
+const types = getTypes(coloredArray);
+const select = document.getElementById("type");
+printOptions(types, select);
+
+
+// ICONE FILTRATE --- TERZA PARTE
+
+select.onchange = function(element) {
+
+  const filtered = filterValues(icons, element.target.value);
+
+  print(filtered, wrap);
+};
+
+
+//  / ICONE FILTRATE --- TERZA PARTE
+
+
+
 
 // PRIMA PARTE
 // stampa icone in html
@@ -159,3 +177,30 @@ function getTypes(array) {
   return types
 };
 // / SECONDA PARTE
+
+
+// TERZA PARTE
+
+function printOptions(array, select) {
+  array.forEach((element) => {
+    select.innerHTML += `<option value="${element}">${element}</option>`
+  })
+};
+
+function filterValues(array, type) {
+  const filteredIcons = array.filter((element) => {
+    if (element.type === type) {
+      return true
+    }
+
+    return false;
+  });
+
+  if (type === "") {
+    return array
+  }
+
+  return filteredIcons
+};
+
+// / TERZA PARTE
